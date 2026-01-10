@@ -39,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor: Color(0xFFFAFAFA),
       body: BlocConsumer<AppConfigurationCubit, AppConfigurationState>(
         listener: (context, state) {
           if (state is AppConfigurationFetchSuccess) {
@@ -59,7 +59,9 @@ class _SplashScreenState extends State<SplashScreen>
             );
           }
           return Center(
-            child: Image.asset(Utils.getImagePath("splash_logo.png")),
+            child:Padding(padding: EdgeInsets.all(10),
+            child:
+            Image.asset(Utils.getImagePath("splash_logo.png"))),
           );
         },
       ),
